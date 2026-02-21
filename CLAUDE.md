@@ -66,3 +66,10 @@ git push                # Push to remote
 - Always sync before ending session
 
 <!-- end-br-agent-instructions -->
+
+## Active Technologies
+- HTML5, CSS3, Vanilla JavaScript (ES2020+), Node.js ≥ 18 (build only) + `sharp` (image optimization), `html-minifier-terser`, `clean-css`, `terser` (minification) (001-portfolio-site)
+- JSON files in `data/` — no database (001-portfolio-site)
+
+## Recent Changes
+- 001-portfolio-site: Added HTML5, CSS3, Vanilla JavaScript (ES2020+), Node.js ≥ 18 (build only) + `sharp` (image optimization), `html-minifier-terser`, `clean-css`, `terser` (minification)
