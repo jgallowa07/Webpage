@@ -19,13 +19,13 @@
 
 **Purpose**: Project initialization, build tooling, and base project structure
 
-- [ ] T001 Create .gitignore with node_modules/, dist/, .DS_Store, *.log exclusions
-- [ ] T002 Initialize package.json with name, version, description, and npm scripts (build, validate); add devDependencies: sharp, html-minifier-terser, clean-css, terser
-- [ ] T003 Create src/ directory structure with empty placeholder files: src/template.html, src/styles.css, src/main.js, src/constants.js
-- [ ] T004 [P] Create data/profile.json with placeholder content per data-model.md schema (name, tagline, bio, email, photo, heroImage, social links)
-- [ ] T005 [P] Create data/skills.json with placeholder content per data-model.md schema (3 categories with sample items)
-- [ ] T006 [P] Create data/projects.json with placeholder content per data-model.md schema (1 sample project card)
-- [ ] T007 [P] Create data/experience.json with placeholder content per data-model.md schema (1 sample experience entry)
+- [x] T001 Create .gitignore with node_modules/, dist/, .DS_Store, *.log exclusions
+- [x] T002 Initialize package.json with name, version, description, and npm scripts (build, validate); add devDependencies: sharp, html-minifier-terser, clean-css, terser
+- [x] T003 Create src/ directory structure with empty placeholder files: src/template.html, src/styles.css, src/main.js, src/constants.js
+- [x] T004 [P] Create data/profile.json with placeholder content per data-model.md schema (name, tagline, bio, email, photo, heroImage, social links)
+- [x] T005 [P] Create data/skills.json with placeholder content per data-model.md schema (3 categories with sample items)
+- [x] T006 [P] Create data/projects.json with placeholder content per data-model.md schema (1 sample project card)
+- [x] T007 [P] Create data/experience.json with placeholder content per data-model.md schema (1 sample experience entry)
 
 ---
 
@@ -35,15 +35,15 @@
 
 **CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T008 Implement build.js — JSON validation module: read and validate all data/*.json files against data-model.md rules; exit non-zero with file/field/rule diagnostic on failure (Principle III)
-- [ ] T009 Implement build.js — template rendering module: read src/template.html, replace {{placeholder}} markers with generated HTML fragments from validated JSON data, write dist/index.html
-- [ ] T010 Implement build.js — image optimization module: use sharp to convert data/*.jpeg to WebP and AVIF at widths 480/768/1280/1920, output to dist/images/, keep JPEG fallback
-- [ ] T011 Implement build.js — minification module: minify CSS via clean-css (src/styles.css → dist/styles.css), minify JS via terser (src/main.js + src/constants.js → dist/main.js), minify HTML via html-minifier-terser (dist/index.html final pass)
-- [ ] T012 Implement build.js — static file copy module: copy CNAME, robots.txt, sitemap.xml, 404.html to dist/; generate CNAME with "jaredgalloway.org"
-- [ ] T013 Implement build.js — orchestrator: wire all modules into sequential pipeline (clean dist/ → validate → render → optimize images → minify CSS/JS → copy static → minify HTML); expose as npm run build
-- [ ] T014 Create src/template.html — full HTML5 skeleton with: doctype, lang="en", meta viewport, meta charset, CSP meta tag per research.md Decision 9, {{placeholder}} markers for all 6 sections (hero, about, skills, projects, experience, contact), semantic landmarks (nav, main, footer), GA gtag.js script tag with async, link to styles.css, script src for main.js with defer
-- [ ] T015 [P] Create src/constants.js with GA_MEASUREMENT_ID (placeholder "G-XXXXXXXXXX"), BREAKPOINTS object ({mobile: 768, desktop: 1280}), ANIMATION_CONFIG object ({threshold: 0.1, rootMargin: "0px"})
-- [ ] T016 [P] Create static files: robots.txt (Allow all, Sitemap: https://jaredgalloway.org/sitemap.xml), sitemap.xml (single URL entry for https://jaredgalloway.org/), 404.html (minimal page with nav link back to /)
+- [x] T008 Implement build.js — JSON validation module: read and validate all data/*.json files against data-model.md rules; exit non-zero with file/field/rule diagnostic on failure (Principle III)
+- [x] T009 Implement build.js — template rendering module: read src/template.html, replace {{placeholder}} markers with generated HTML fragments from validated JSON data, write dist/index.html
+- [x] T010 Implement build.js — image optimization module: use sharp to convert data/*.jpeg to WebP and AVIF at widths 480/768/1280/1920, output to dist/images/, keep JPEG fallback
+- [x] T011 Implement build.js — minification module: minify CSS via clean-css (src/styles.css → dist/styles.css), minify JS via terser (src/main.js + src/constants.js → dist/main.js), minify HTML via html-minifier-terser (dist/index.html final pass)
+- [x] T012 Implement build.js — static file copy module: copy CNAME, robots.txt, sitemap.xml, 404.html to dist/; generate CNAME with "jaredgalloway.org"
+- [x] T013 Implement build.js — orchestrator: wire all modules into sequential pipeline (clean dist/ → validate → render → optimize images → minify CSS/JS → copy static → minify HTML); expose as npm run build
+- [x] T014 Create src/template.html — full HTML5 skeleton with: doctype, lang="en", meta viewport, meta charset, CSP meta tag per research.md Decision 9, {{placeholder}} markers for all 6 sections (hero, about, skills, projects, experience, contact), semantic landmarks (nav, main, footer), GA gtag.js script tag with async, link to styles.css, script src for main.js with defer
+- [x] T015 [P] Create src/constants.js with GA_MEASUREMENT_ID (placeholder "G-XXXXXXXXXX"), BREAKPOINTS object ({mobile: 768, desktop: 1280}), ANIMATION_CONFIG object ({threshold: 0.1, rootMargin: "0px"})
+- [x] T016 [P] Create static files: robots.txt (Allow all, Sitemap: https://jaredgalloway.org/sitemap.xml), sitemap.xml (single URL entry for https://jaredgalloway.org/), 404.html (minimal page with nav link back to /)
 
 **Checkpoint**: `npm run build` produces a valid dist/ directory with rendered index.html, optimized images, minified assets, and all static files. Template renders with placeholder JSON data.
 
@@ -57,23 +57,23 @@
 
 ### Implementation for User Story 1
 
-- [ ] T017 [US1] Implement Hero section in src/template.html — h1 with {{name}}, p with {{tagline}}, CTA button linking to #projects, full-bleed background image using {{heroImage}} with theme-adaptive gradient overlay via CSS, {{placeholder}} markers for build script to populate
-- [ ] T018 [US1] Implement Hero section styles in src/styles.css — full-viewport-height hero, background-image with linear-gradient overlay using var(--color-hero-overlay), centered text, CTA button styles, responsive text sizing with clamp()
-- [ ] T019 [US1] Implement About section in src/template.html — section#about with img ({{photo}} with descriptive alt text), {{bio}} rendered as paragraphs
-- [ ] T020 [US1] Implement About section styles in src/styles.css — two-column layout (photo left, bio right) on tablet+, single column on mobile, photo max-width constrained, border-radius on photo
-- [ ] T021 [US1] Implement Skills section in src/template.html — section#skills with {{skills_html}} placeholder, build.js renders category groups with h3 headings and grid of skill items with visible text labels per FR-010/FR-010a/FR-011
-- [ ] T022 [US1] Implement Skills section styles in src/styles.css — category group headings, CSS grid for skill items (auto-fill, minmax), skill item card styles with name text, responsive columns
-- [ ] T023 [US1] Implement Experience section in src/template.html — section#experience with {{experience_html}} placeholder, build.js renders reverse-chronological timeline entries with role title, org name, date range, description per FR-015/FR-016
-- [ ] T024 [US1] Implement Experience section styles in src/styles.css — vertical timeline layout with line/dot decorations, entry cards, date range styling, responsive adjustments
-- [ ] T025 [US1] Implement Contact section in src/template.html — section#contact with obfuscated email (CSS direction:rtl + unicode-bidi:bidi-override per research.md Decision 8), noscript fallback, GitHub and LinkedIn icon links with accessible labels (aria-label), all links target="_blank" rel="noopener noreferrer" per FR-017/FR-018/FR-019
-- [ ] T026 [US1] Implement Contact section styles in src/styles.css — centered layout, social icon sizing (≥ 44px touch targets), email link styles, RTL obfuscation CSS rules
-- [ ] T027 [US1] Implement Navigation bar in src/template.html — nav element with anchor links to #hero, #about, #skills, #projects, #experience, #contact; sticky positioning; site name/logo; theme toggle button placeholder per FR-002
-- [ ] T028 [US1] Implement Navigation styles in src/styles.css — sticky top, background with backdrop-filter blur, horizontal link layout on desktop, active state indicator, z-index layering
-- [ ] T029 [US1] Implement smooth scroll behavior in src/styles.css — html { scroll-behavior: smooth; scroll-padding-top } to account for sticky nav height per FR-003
-- [ ] T030 [US1] Implement CSS custom properties in src/styles.css — :root block with full dark theme palette (--color-bg, --color-text-primary, --color-text-secondary, --color-accent, --color-surface, --color-border, --color-hero-overlay), spacing scale (--space-xs through --space-xl), typography (--font-body, --font-mono) per plan.md CSS tokens
-- [ ] T031 [US1] Implement CSS reset and base styles in src/styles.css — box-sizing: border-box, margin reset, body background/color using custom properties, base typography, max-width container, section padding
-- [ ] T032 [US1] Implement SEO metadata in src/template.html — title tag, meta description (120-158 chars), canonical link, Open Graph tags (og:title, og:description, og:image, og:url), JSON-LD Person schema with name/jobTitle/url/sameAs per FR-029
-- [ ] T033 [US1] Update build.js render module — implement HTML fragment generation for all US1 sections: hero (name, tagline, CTA, hero image srcset), about (photo with srcset, bio paragraphs), skills (category groups with item grids), experience (timeline entries), contact (obfuscated email, social links), SEO metadata injection
+- [x] T017 [US1] Implement Hero section in src/template.html — h1 with {{name}}, p with {{tagline}}, CTA button linking to #projects, full-bleed background image using {{heroImage}} with theme-adaptive gradient overlay via CSS, {{placeholder}} markers for build script to populate
+- [x] T018 [US1] Implement Hero section styles in src/styles.css — full-viewport-height hero, background-image with linear-gradient overlay using var(--color-hero-overlay), centered text, CTA button styles, responsive text sizing with clamp()
+- [x] T019 [US1] Implement About section in src/template.html — section#about with img ({{photo}} with descriptive alt text), {{bio}} rendered as paragraphs
+- [x] T020 [US1] Implement About section styles in src/styles.css — two-column layout (photo left, bio right) on tablet+, single column on mobile, photo max-width constrained, border-radius on photo
+- [x] T021 [US1] Implement Skills section in src/template.html — section#skills with {{skills_html}} placeholder, build.js renders category groups with h3 headings and grid of skill items with visible text labels per FR-010/FR-010a/FR-011
+- [x] T022 [US1] Implement Skills section styles in src/styles.css — category group headings, CSS grid for skill items (auto-fill, minmax), skill item card styles with name text, responsive columns
+- [x] T023 [US1] Implement Experience section in src/template.html — section#experience with {{experience_html}} placeholder, build.js renders reverse-chronological timeline entries with role title, org name, date range, description per FR-015/FR-016
+- [x] T024 [US1] Implement Experience section styles in src/styles.css — vertical timeline layout with line/dot decorations, entry cards, date range styling, responsive adjustments
+- [x] T025 [US1] Implement Contact section in src/template.html — section#contact with obfuscated email (CSS direction:rtl + unicode-bidi:bidi-override per research.md Decision 8), noscript fallback, GitHub and LinkedIn icon links with accessible labels (aria-label), all links target="_blank" rel="noopener noreferrer" per FR-017/FR-018/FR-019
+- [x] T026 [US1] Implement Contact section styles in src/styles.css — centered layout, social icon sizing (≥ 44px touch targets), email link styles, RTL obfuscation CSS rules
+- [x] T027 [US1] Implement Navigation bar in src/template.html — nav element with anchor links to #hero, #about, #skills, #projects, #experience, #contact; sticky positioning; site name/logo; theme toggle button placeholder per FR-002
+- [x] T028 [US1] Implement Navigation styles in src/styles.css — sticky top, background with backdrop-filter blur, horizontal link layout on desktop, active state indicator, z-index layering
+- [x] T029 [US1] Implement smooth scroll behavior in src/styles.css — html { scroll-behavior: smooth; scroll-padding-top } to account for sticky nav height per FR-003
+- [x] T030 [US1] Implement CSS custom properties in src/styles.css — :root block with full dark theme palette (--color-bg, --color-text-primary, --color-text-secondary, --color-accent, --color-surface, --color-border, --color-hero-overlay), spacing scale (--space-xs through --space-xl), typography (--font-body, --font-mono) per plan.md CSS tokens
+- [x] T031 [US1] Implement CSS reset and base styles in src/styles.css — box-sizing: border-box, margin reset, body background/color using custom properties, base typography, max-width container, section padding
+- [x] T032 [US1] Implement SEO metadata in src/template.html — title tag, meta description (120-158 chars), canonical link, Open Graph tags (og:title, og:description, og:image, og:url), JSON-LD Person schema with name/jobTitle/url/sameAs per FR-029
+- [x] T033 [US1] Update build.js render module — implement HTML fragment generation for all US1 sections: hero (name, tagline, CTA, hero image srcset), about (photo with srcset, bio paragraphs), skills (category groups with item grids), experience (timeline entries), contact (obfuscated email, social links), SEO metadata injection
 
 **Checkpoint**: Full page renders with all US1 content from JSON. Recruiter can scroll through Hero → About → Skills → Experience → Contact. Nav links work. All content is present and accurate.
 
@@ -87,9 +87,9 @@
 
 ### Implementation for User Story 2
 
-- [ ] T034 [US2] Implement Projects section in src/template.html — section#projects with {{projects_html}} placeholder, build.js renders project cards with title, description, technology tags, and external links (target="_blank" rel="noopener noreferrer") per FR-012/FR-013/FR-014
-- [ ] T035 [US2] Implement Projects section styles in src/styles.css — responsive card grid (1 col mobile, 2 col tablet, 3 col desktop), card styles with surface background, tag pill/chip styles, link button styles, hover states
-- [ ] T036 [US2] Update build.js render module — implement HTML fragment generation for projects section: card grid with title h3, description p, tags list, links list with external link icon
+- [x] T034 [US2] Implement Projects section in src/template.html — section#projects with {{projects_html}} placeholder, build.js renders project cards with title, description, technology tags, and external links (target="_blank" rel="noopener noreferrer") per FR-012/FR-013/FR-014
+- [x] T035 [US2] Implement Projects section styles in src/styles.css — responsive card grid (1 col mobile, 2 col tablet, 3 col desktop), card styles with surface background, tag pill/chip styles, link button styles, hover states
+- [x] T036 [US2] Update build.js render module — implement HTML fragment generation for projects section: card grid with title h3, description p, tags list, links list with external link icon
 
 **Checkpoint**: Projects section displays cards from data/projects.json. Cards show title, description, tags, links. Links open in new tabs. Grid is responsive.
 
@@ -103,12 +103,12 @@
 
 ### Implementation for User Story 3
 
-- [ ] T037 [US3] Implement hamburger menu in src/template.html — add hamburger button (three-line icon) with aria-expanded="false" and aria-controls, hidden overlay menu markup with all nav links, close button per FR-003a
-- [ ] T038 [US3] Implement hamburger menu styles in src/styles.css — hide hamburger button above 768px, show on mobile, overlay/slide-down menu styles, menu link sizing (≥ 44px touch targets), transition animations, body scroll lock when menu open
-- [ ] T039 [US3] Implement hamburger menu logic in src/main.js — toggle aria-expanded on click, show/hide overlay menu, close on link click or close button, close on Escape key, trap focus within open menu for accessibility
-- [ ] T040 [US3] Implement theme toggle in src/main.js — check sessionStorage for saved theme, check prefers-color-scheme as fallback, set data-theme attribute on html element, toggle button switches between dark/light and saves to sessionStorage per FR-020/FR-021/FR-022
-- [ ] T041 [US3] Implement theme toggle styles in src/styles.css — [data-theme="light"] custom property overrides per plan.md light theme palette, toggle button icon (sun/moon), transition on color properties for smooth switch (< 100ms per SC-006)
-- [ ] T042 [US3] Implement responsive layout refinements in src/styles.css — verify all sections at 320px/768px/1280px breakpoints, ensure no horizontal overflow, verify touch targets ≥ 44px on all interactive elements per SC-005, add min-width media queries for tablet (768px) and desktop (1280px)
+- [x] T037 [US3] Implement hamburger menu in src/template.html — add hamburger button (three-line icon) with aria-expanded="false" and aria-controls, hidden overlay menu markup with all nav links, close button per FR-003a
+- [x] T038 [US3] Implement hamburger menu styles in src/styles.css — hide hamburger button above 768px, show on mobile, overlay/slide-down menu styles, menu link sizing (≥ 44px touch targets), transition animations, body scroll lock when menu open
+- [x] T039 [US3] Implement hamburger menu logic in src/main.js — toggle aria-expanded on click, show/hide overlay menu, close on link click or close button, close on Escape key, trap focus within open menu for accessibility
+- [x] T040 [US3] Implement theme toggle in src/main.js — check sessionStorage for saved theme, check prefers-color-scheme as fallback, set data-theme attribute on html element, toggle button switches between dark/light and saves to sessionStorage per FR-020/FR-021/FR-022
+- [x] T041 [US3] Implement theme toggle styles in src/styles.css — [data-theme="light"] custom property overrides per plan.md light theme palette, toggle button icon (sun/moon), transition on color properties for smooth switch (< 100ms per SC-006)
+- [x] T042 [US3] Implement responsive layout refinements in src/styles.css — verify all sections at 320px/768px/1280px breakpoints, ensure no horizontal overflow, verify touch targets ≥ 44px on all interactive elements per SC-005, add min-width media queries for tablet (768px) and desktop (1280px)
 
 **Checkpoint**: Site fully functional on 375px viewport. Hamburger menu opens/closes. Theme toggles and persists for session. All content readable at 320/768/1280px. Touch targets meet 44px minimum.
 
@@ -122,14 +122,14 @@
 
 ### Implementation for User Story 4
 
-- [ ] T043 [US4] Implement scroll animations in src/main.js — IntersectionObserver triggers fade-in/slide-up on sections below fold, add .animate-in CSS class on intersection, respect prefers-reduced-motion (disable all animations) per FR-023/FR-024
-- [ ] T044 [US4] Implement scroll animation styles in src/styles.css — .animate-in base state (opacity: 0, translateY), .animate-in.visible state (opacity: 1, translateY: 0), transition timing, @media (prefers-reduced-motion: reduce) disables all animations
-- [ ] T045 [US4] Implement email obfuscation JS in src/main.js — assemble correct mailto: link from reversed/encoded parts at click-time, attach to contact email element per research.md Decision 8
-- [ ] T046 [US4] Implement visible focus indicators in src/styles.css — :focus-visible outline styles on all interactive elements (links, buttons, toggle), high-contrast outline color, skip-to-content link that appears on focus per FR-026
-- [ ] T047 [US4] Add skip-to-content link in src/template.html — first element in body, visually hidden until focused, links to #main, visible focus style per accessibility best practices
-- [ ] T048 [US4] Audit and fix ARIA attributes in src/template.html — verify nav has aria-label, hamburger has aria-expanded + aria-controls, theme toggle has aria-label describing current state, social links have aria-label, decorative images have alt="" per FR-025
-- [ ] T049 [US4] Implement forced-colors mode support in src/styles.css — @media (forced-colors: active) block that ensures readability, does not override system palette per edge case spec
-- [ ] T050 [US4] Add heading hierarchy validation — verify h1 (hero name) → h2 (section titles) → h3 (skill categories, project titles) is logical and sequential with no skipped levels
+- [x] T043 [US4] Implement scroll animations in src/main.js — IntersectionObserver triggers fade-in/slide-up on sections below fold, add .animate-in CSS class on intersection, respect prefers-reduced-motion (disable all animations) per FR-023/FR-024
+- [x] T044 [US4] Implement scroll animation styles in src/styles.css — .animate-in base state (opacity: 0, translateY), .animate-in.visible state (opacity: 1, translateY: 0), transition timing, @media (prefers-reduced-motion: reduce) disables all animations
+- [x] T045 [US4] Implement email obfuscation JS in src/main.js — assemble correct mailto: link from reversed/encoded parts at click-time, attach to contact email element per research.md Decision 8
+- [x] T046 [US4] Implement visible focus indicators in src/styles.css — :focus-visible outline styles on all interactive elements (links, buttons, toggle), high-contrast outline color, skip-to-content link that appears on focus per FR-026
+- [x] T047 [US4] Add skip-to-content link in src/template.html — first element in body, visually hidden until focused, links to #main, visible focus style per accessibility best practices
+- [x] T048 [US4] Audit and fix ARIA attributes in src/template.html — verify nav has aria-label, hamburger has aria-expanded + aria-controls, theme toggle has aria-label describing current state, social links have aria-label, decorative images have alt="" per FR-025
+- [x] T049 [US4] Implement forced-colors mode support in src/styles.css — @media (forced-colors: active) block that ensures readability, does not override system palette per edge case spec
+- [x] T050 [US4] Add heading hierarchy validation — verify h1 (hero name) → h2 (section titles) → h3 (skill categories, project titles) is logical and sequential with no skipped levels
 
 **Checkpoint**: Full keyboard navigation works. Focus indicators visible. Screen reader announces landmarks (nav, main, footer). All images have appropriate alt text. Animations respect prefers-reduced-motion.
 
@@ -139,20 +139,20 @@
 
 **Purpose**: Mandatory quality gates, deployment pipeline, and final refinements
 
-- [ ] T051 [P] Create .github/workflows/deploy.yml — GitHub Actions workflow: trigger on push to main, install Node 18, npm ci, npm run build, deploy dist/ via actions/upload-pages-artifact + actions/deploy-pages per research.md Decision 6
+- [x] T051 [P] Create .github/workflows/deploy.yml — GitHub Actions workflow: trigger on push to main, install Node 18, npm ci, npm run build, deploy dist/ via actions/upload-pages-artifact + actions/deploy-pages per research.md Decision 6
 - [ ] T052 [P] Configure GitHub Pages settings — enable Pages with GitHub Actions source (manual step, document in README)
-- [ ] T053 Populate data/profile.json with real content — Jared's actual bio, verify email, social links match spec
-- [ ] T054 [P] Populate data/skills.json with real content — actual skills organized into categories (Languages, Frameworks, Tools/Infrastructure)
-- [ ] T055 [P] Populate data/projects.json with real content — actual projects with descriptions, tags, GitHub links
-- [ ] T056 [P] Populate data/experience.json with real content — actual employment history in reverse-chronological order
-- [ ] T057 Run build and verify dist/ output — npm run build succeeds, index.html contains all rendered content, images optimized, CSS/JS minified, static files present
+- [x] T053 Populate data/profile.json with real content — Jared's actual bio, verify email, social links match spec
+- [x] T054 [P] Populate data/skills.json with real content — actual skills organized into categories (Languages, Frameworks, Tools/Infrastructure)
+- [x] T055 [P] Populate data/projects.json with real content — actual projects with descriptions, tags, GitHub links
+- [x] T056 [P] Populate data/experience.json with real content — actual employment history in reverse-chronological order
+- [x] T057 Run build and verify dist/ output — npm run build succeeds, index.html contains all rendered content, images optimized, CSS/JS minified, static files present
 - [ ] T058 [P] W3C HTML validation — validate dist/index.html, zero errors per SC-008
 - [ ] T059 [P] Accessibility audit (axe-core or Lighthouse) — zero critical/serious WCAG 2.1 AA violations per SC-004 (Principle IV)
 - [ ] T060 [P] Lighthouse performance audit — verify ≥ 95 in Performance, Accessibility, Best Practices, SEO on both mobile and desktop per SC-002 (Principle V)
-- [ ] T061 Security review — verify no secrets in source, CSP meta tag present and correct, no inline scripts/styles, email obfuscated in source (Principle VI)
-- [ ] T062 SEO checklist — verify title, meta description, canonical, OG tags, JSON-LD Person schema, sitemap.xml, robots.txt all present and correct (Principle VII)
+- [x] T061 Security review — verify no secrets in source, CSP meta tag present and correct, no inline scripts/styles, email obfuscated in source (Principle VI)
+- [x] T062 SEO checklist — verify title, meta description, canonical, OG tags, JSON-LD Person schema, sitemap.xml, robots.txt all present and correct (Principle VII)
 - [ ] T063 Cross-browser responsive check — verify at 320px, 768px, 1280px viewports, no horizontal scrolling, all content readable per SC-005
-- [ ] T064 Code cleanup — DRY review of CSS (custom properties used consistently), naming review (no magic strings in JS), build.js function sizes ≤ 30 lines (Principles I, II, IX)
+- [x] T064 Code cleanup — DRY review of CSS (custom properties used consistently), naming review (no magic strings in JS), build.js function sizes ≤ 30 lines (Principles I, II, IX)
 
 ---
 

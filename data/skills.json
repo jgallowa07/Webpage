@@ -1,0 +1,60 @@
+[
+  {
+    "category": "Languages",
+    "items": [
+      { "name": "Python" },
+      { "name": "R" },
+      { "name": "C/C++" },
+      { "name": "Bash" },
+      { "name": "Java" },
+      { "name": "JavaScript" }
+    ]
+  },
+  {
+    "category": "ML & Data Science",
+    "items": [
+      { "name": "JAX" },
+      { "name": "TensorFlow/Keras" },
+      { "name": "PyTorch" },
+      { "name": "Scikit-learn" },
+      { "name": "Pandas" },
+      { "name": "Polars" },
+      { "name": "NumPy" },
+      { "name": "Xarray" },
+      { "name": "SciPy" },
+      { "name": "BioPython" }
+    ]
+  },
+  {
+    "category": "Visualization",
+    "items": [
+      { "name": "Matplotlib" },
+      { "name": "Plotnine" },
+      { "name": "Altair" }
+    ]
+  },
+  {
+    "category": "Tools & Infrastructure",
+    "items": [
+      { "name": "Git" },
+      { "name": "GitHub Actions" },
+      { "name": "Docker" },
+      { "name": "Apptainer" },
+      { "name": "Conda/Mamba" },
+      { "name": "Snakemake" },
+      { "name": "Nextflow" },
+      { "name": "SLURM HPC" },
+      { "name": "AWS S3" },
+      { "name": "LaTeX" }
+    ]
+  },
+  {
+    "category": "Mathematics",
+    "items": [
+      { "name": "Bayesian Statistics" },
+      { "name": "Linear Algebra" },
+      { "name": "Discrete Math" },
+      { "name": "Calculus" }
+    ]
+  }
+]
