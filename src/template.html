@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; connect-src https://www.google-analytics.com; img-src 'self' data:; style-src 'self'; font-src 'self'">
+    <title>{{title}}</title>
+    {{seo_meta}}
+    {{seo_jsonld}}
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <nav class="nav" aria-label="Main navigation">
+      <div class="nav__inner">
+        <span class="nav__brand">JG</span>
+        <div class="nav__links" id="nav-links">
+          {{nav_links}}
+        </div>
+        <button class="nav__hamburger" id="hamburger" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+          <span class="nav__hamburger-line"></span>
+          <span class="nav__hamburger-line"></span>
+          <span class="nav__hamburger-line"></span>
+        </button>
+        <button class="nav__theme-toggle" id="theme-toggle" aria-label="Switch to light mode">
+          <span class="nav__theme-icon"></span>
+        </button>
+      </div>
+    </nav>
+
+    <div class="nav__menu-overlay" id="nav-menu" role="dialog" aria-label="Navigation menu" hidden>
+      <div class="nav__menu-inner">
+        {{nav_links}}
+        <button class="nav__menu-close" aria-label="Close navigation menu">&times;</button>
+      </div>
+    </div>
+
+    <main id="main">
+      {{hero}}
+      {{about}}
+      {{skills}}
+      {{projects}}
+      {{experience}}
+      {{contact}}
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 Jared Galloway</p>
+    </footer>
+
+    <script src="main.js" defer></script>
+</body>
+</html>
