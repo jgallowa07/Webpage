@@ -278,7 +278,7 @@ function renderContact(profile) {
 function renderSEO(profile) {
   const title = `${profile.name} — ${profile.tagline}`;
   const description = `Portfolio of ${profile.name}, ${profile.tagline}. View projects, skills, and experience.`;
-  const url = 'https://jaredgalloway.org/';
+  const url = 'https://jaredgalloway.com/';
 
   return {
     title,
@@ -395,7 +395,7 @@ async function minifyAssets() {
 function copyStaticFiles() {
   console.log('  Copying static files...');
 
-  fs.writeFileSync(path.join(DIST, 'CNAME'), 'jaredgalloway.org', 'utf8');
+  fs.writeFileSync(path.join(DIST, 'CNAME'), 'jaredgalloway.com', 'utf8');
 
   const staticFiles = ['robots.txt', 'sitemap.xml', '404.html'];
   for (const file of staticFiles) {

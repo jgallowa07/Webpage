@@ -3,13 +3,13 @@
 **Feature Branch**: `001-portfolio-site`
 **Created**: 2026-02-19
 **Status**: Draft
-**URL**: jaredgalloway.org
+**URL**: jaredgalloway.com
 
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Recruiter Evaluates Candidate (Priority: P1)
 
-A recruiter or hiring manager arrives at jaredgalloway.org to assess Jared's background quickly. They want to see who he is, what he has built, where he has worked, and how to contact him — all in a single visit without downloading anything or navigating away.
+A recruiter or hiring manager arrives at jaredgalloway.com to assess Jared's background quickly. They want to see who he is, what he has built, where he has worked, and how to contact him — all in a single visit without downloading anything or navigating away.
 
 **Why this priority**: This is the primary use-case driving the entire site's existence. Every other story depends on a solid first impression for professional evaluation.
 
@@ -17,7 +17,7 @@ A recruiter or hiring manager arrives at jaredgalloway.org to assess Jared's bac
 
 **Acceptance Scenarios**:
 
-1. **Given** a recruiter lands on jaredgalloway.org, **When** the page loads, **Then** Jared's full name, professional tagline, and a clear call-to-action are immediately visible above the fold.
+1. **Given** a recruiter lands on jaredgalloway.com, **When** the page loads, **Then** Jared's full name, professional tagline, and a clear call-to-action are immediately visible above the fold.
 2. **Given** the recruiter scrolls to the About section, **When** they view it, **Then** they see a professional photo of Jared alongside a written bio.
 3. **Given** the recruiter scrolls to Experience, **When** they view it, **Then** they see a chronological timeline of Jared's employment history with role titles, organisations, and dates.
 4. **Given** the recruiter wants to reach Jared, **When** they scroll to Contact, **Then** they find a working email link and icons linking to his GitHub (https://github.com/jgallowa07) and LinkedIn (https://www.linkedin.com/in/jared-galloway-707836116/).
@@ -35,7 +35,7 @@ A fellow engineer or open-source collaborator visits the site to browse Jared's 
 **Acceptance Scenarios**:
 
 1. **Given** a visitor reaches the Projects section, **When** they view a project card, **Then** they see a title, short description, technology tags, and at least one link (GitHub repo or live demo).
-2. **Given** a visitor clicks a project link, **When** the link is activated, **Then** it opens in a new browser tab without leaving jaredgalloway.org.
+2. **Given** a visitor clicks a project link, **When** the link is activated, **Then** it opens in a new browser tab without leaving jaredgalloway.com.
 3. **Given** the Projects section contains multiple projects, **When** viewed at any viewport width, **Then** all cards are readable and no content is clipped or hidden.
 
 ---
@@ -89,7 +89,7 @@ A visitor using a screen reader navigates the site by headings and landmarks to 
 
 **Navigation & Structure**
 
-- **FR-001**: The site MUST present all content on a single scrollable page reachable at jaredgalloway.org.
+- **FR-001**: The site MUST present all content on a single scrollable page reachable at jaredgalloway.com.
 - **FR-002**: The site MUST include a fixed or sticky navigation bar with anchor links to each named section (Hero, About, Skills, Projects, Experience, Contact).
 - **FR-003**: Clicking a navigation anchor MUST scroll the viewport smoothly to the corresponding section.
 - **FR-003a**: On viewports narrower than 768 px, the navigation bar MUST collapse into a hamburger icon. Tapping the icon MUST reveal a slide-down or overlay menu listing all section anchor links. Tapping a link or the close control MUST dismiss the menu.
@@ -158,12 +158,12 @@ A visitor using a screen reader navigates the site by headings and landmarks to 
 - **FR-028**: The page MUST achieve a Lighthouse score of ≥ 95 in Performance, Accessibility, Best Practices, and SEO categories.
 - **FR-029**: The page MUST include a `<title>`, `<meta name="description">`, canonical link, Open Graph tags, and JSON-LD Person structured data.
 - **FR-030**: A `sitemap.xml` and `robots.txt` MUST be present at the domain root.
-- **FR-031**: A `CNAME` file containing `jaredgalloway.org` MUST be present in the repository root for GitHub Pages custom domain routing.
+- **FR-031**: A `CNAME` file containing `jaredgalloway.com` MUST be present in the repository root for GitHub Pages custom domain routing.
 - **FR-032**: A `404.html` page MUST exist and provide a navigation link back to the homepage.
 
 ### Key Entities
 
-- **Page**: The single HTML document served at jaredgalloway.org; contains all sections and metadata.
+- **Page**: The single HTML document served at jaredgalloway.com; contains all sections and metadata.
 - **Section**: A named, anchor-linked division of the page (Hero, About, Skills, Projects, Experience, Contact); each independently navigable.
 - **Project Card**: A self-contained content block representing one project; attributes: title, description, tags (array of strings), links (array of {label, url}).
 - **Experience Entry**: A self-contained content block representing one role; attributes: title, organisation, start date, end date (or "Present"), description.

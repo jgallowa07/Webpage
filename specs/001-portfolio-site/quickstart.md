@@ -70,4 +70,4 @@ dist/                  # Build output (git-ignored)
 
 ## Deployment
 
-Push to `main` → GitHub Actions runs `npm run build` → deploys `dist/` to GitHub Pages → live at jaredgalloway.org.
+Push to `main` → GitHub Actions runs `npm run build` → deploys `dist/` to GitHub Pages → live at jaredgalloway.com.

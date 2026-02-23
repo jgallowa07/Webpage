@@ -39,11 +39,11 @@
 - [x] T009 Implement build.js — template rendering module: read src/template.html, replace {{placeholder}} markers with generated HTML fragments from validated JSON data, write dist/index.html
 - [x] T010 Implement build.js — image optimization module: use sharp to convert data/*.jpeg to WebP and AVIF at widths 480/768/1280/1920, output to dist/images/, keep JPEG fallback
 - [x] T011 Implement build.js — minification module: minify CSS via clean-css (src/styles.css → dist/styles.css), minify JS via terser (src/main.js + src/constants.js → dist/main.js), minify HTML via html-minifier-terser (dist/index.html final pass)
-- [x] T012 Implement build.js — static file copy module: copy CNAME, robots.txt, sitemap.xml, 404.html to dist/; generate CNAME with "jaredgalloway.org"
+- [x] T012 Implement build.js — static file copy module: copy CNAME, robots.txt, sitemap.xml, 404.html to dist/; generate CNAME with "jaredgalloway.com"
 - [x] T013 Implement build.js — orchestrator: wire all modules into sequential pipeline (clean dist/ → validate → render → optimize images → minify CSS/JS → copy static → minify HTML); expose as npm run build
 - [x] T014 Create src/template.html — full HTML5 skeleton with: doctype, lang="en", meta viewport, meta charset, CSP meta tag per research.md Decision 9, {{placeholder}} markers for all 6 sections (hero, about, skills, projects, experience, contact), semantic landmarks (nav, main, footer), GA gtag.js script tag with async, link to styles.css, script src for main.js with defer
 - [x] T015 [P] Create src/constants.js with GA_MEASUREMENT_ID (placeholder "G-XXXXXXXXXX"), BREAKPOINTS object ({mobile: 768, desktop: 1280}), ANIMATION_CONFIG object ({threshold: 0.1, rootMargin: "0px"})
-- [x] T016 [P] Create static files: robots.txt (Allow all, Sitemap: https://jaredgalloway.org/sitemap.xml), sitemap.xml (single URL entry for https://jaredgalloway.org/), 404.html (minimal page with nav link back to /)
+- [x] T016 [P] Create static files: robots.txt (Allow all, Sitemap: https://jaredgalloway.com/sitemap.xml), sitemap.xml (single URL entry for https://jaredgalloway.com/), 404.html (minimal page with nav link back to /)
 
 **Checkpoint**: `npm run build` produces a valid dist/ directory with rendered index.html, optimized images, minified assets, and all static files. Template renders with placeholder JSON data.
 
@@ -51,7 +51,7 @@
 
 ## Phase 3: User Story 1 — Recruiter Evaluates Candidate (Priority: P1) MVP
 
-**Goal**: A recruiter visiting jaredgalloway.org sees Jared's name, tagline, bio, photo, skills, experience timeline, and contact info — all on a single scrollable page with working navigation.
+**Goal**: A recruiter visiting jaredgalloway.com sees Jared's name, tagline, bio, photo, skills, experience timeline, and contact info — all on a single scrollable page with working navigation.
 
 **Independent Test**: Visit the built page, read Hero → About → Skills → Experience → Contact end-to-end, confirm all content is present from JSON data, all nav links scroll to correct sections.
 

@@ -5,7 +5,7 @@
 
 ## Summary
 
-Build a single-page portfolio site for Jared Galloway at jaredgalloway.org. Content (bio, skills, projects, experience) is stored in JSON files under `data/` and rendered into a static HTML page by a minimal Node.js build script. The build pipeline optimizes images to WebP/AVIF, minifies CSS/JS, and outputs a deployable `dist/` directory. GitHub Actions deploys to GitHub Pages on push to `main`. The site supports dark/light theming, a mobile hamburger menu, scroll animations, email obfuscation, and meets WCAG 2.1 AA, Lighthouse ≥ 95, and all Constitution principles.
+Build a single-page portfolio site for Jared Galloway at jaredgalloway.com. Content (bio, skills, projects, experience) is stored in JSON files under `data/` and rendered into a static HTML page by a minimal Node.js build script. The build pipeline optimizes images to WebP/AVIF, minifies CSS/JS, and outputs a deployable `dist/` directory. GitHub Actions deploys to GitHub Pages on push to `main`. The site supports dark/light theming, a mobile hamburger menu, scroll animations, email obfuscation, and meets WCAG 2.1 AA, Lighthouse ≥ 95, and all Constitution principles.
 
 ## Technical Context
 
