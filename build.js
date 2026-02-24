@@ -155,6 +155,12 @@ function reverseString(str) {
 
 function renderHero(profile) {
   return `<section id="hero" class="hero">
+      <picture class="hero__bg">
+        <source srcset="images/mirror-lake-480.avif 480w, images/mirror-lake-768.avif 768w, images/mirror-lake-1280.avif 1280w, images/mirror-lake-1920.avif 1920w" type="image/avif" sizes="100vw">
+        <source srcset="images/mirror-lake-480.webp 480w, images/mirror-lake-768.webp 768w, images/mirror-lake-1280.webp 1280w, images/mirror-lake-1920.webp 1920w" type="image/webp" sizes="100vw">
+        <img src="images/mirror-lake-1280.jpeg" srcset="images/mirror-lake-480.jpeg 480w, images/mirror-lake-768.jpeg 768w, images/mirror-lake-1280.jpeg 1280w, images/mirror-lake-1920.jpeg 1920w" sizes="100vw" alt="" class="hero__bg-img" fetchpriority="high">
+      </picture>
+      <div class="hero__overlay"></div>
       <div class="hero__content">
         <h1 class="hero__name">${escapeHTML(profile.name)}</h1>
         <p class="hero__tagline">${escapeHTML(profile.tagline)}</p>
@@ -213,7 +219,7 @@ function renderProjects(projects) {
       `<span class="project__tag">${escapeHTML(t)}</span>`
     ).join(' ');
     const links = p.links.map(l =>
-      `<a href="${escapeHTML(l.url)}" target="_blank" rel="noopener noreferrer" class="project__link">${escapeHTML(l.label)}</a>`
+      `<a href="${escapeHTML(l.url)}" target="_blank" rel="noopener noreferrer" class="project__link">${escapeHTML(l.label)} — ${escapeHTML(p.title)}</a>`
     ).join(' ');
     return `<article class="project__card">
           <h3 class="project__title">${escapeHTML(p.title)}</h3>
@@ -386,6 +392,15 @@ async function minifyAssets() {
   }
   fs.writeFileSync(path.join(DIST, 'main.js'), jsResult.code, 'utf8');
   console.log('    ✓ JS minified');
+
+  // Analytics JS
+  const analyticsJS = fs.readFileSync(path.join(SRC, 'analytics.js'), 'utf8');
+  const analyticsResult = await minifyJS(analyticsJS, { compress: true, mangle: true });
+  if (analyticsResult.error) {
+    throw new Error(`Analytics JS minification failed: ${analyticsResult.error}`);
+  }
+  fs.writeFileSync(path.join(DIST, 'analytics.js'), analyticsResult.code, 'utf8');
+  console.log('    ✓ Analytics JS minified');
 
   console.log('  ✓ Assets minified');
 }
