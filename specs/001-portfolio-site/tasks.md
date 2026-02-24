@@ -146,12 +146,12 @@
 - [x] T055 [P] Populate data/projects.json with real content — actual projects with descriptions, tags, GitHub links
 - [x] T056 [P] Populate data/experience.json with real content — actual employment history in reverse-chronological order
 - [x] T057 Run build and verify dist/ output — npm run build succeeds, index.html contains all rendered content, images optimized, CSS/JS minified, static files present
-- [ ] T058 [P] W3C HTML validation — validate dist/index.html, zero errors per SC-008
-- [ ] T059 [P] Accessibility audit (axe-core or Lighthouse) — zero critical/serious WCAG 2.1 AA violations per SC-004 (Principle IV)
-- [ ] T060 [P] Lighthouse performance audit — verify ≥ 95 in Performance, Accessibility, Best Practices, SEO on both mobile and desktop per SC-002 (Principle V)
+- [x] T058 [P] W3C HTML validation — validate dist/index.html, zero errors per SC-008
+- [x] T059 [P] Accessibility audit (axe-core or Lighthouse) — zero critical/serious WCAG 2.1 AA violations per SC-004 (Principle IV)
+- [x] T060 [P] Lighthouse performance audit — verify ≥ 95 in Performance, Accessibility, Best Practices, SEO on both mobile and desktop per SC-002 (Principle V)
 - [x] T061 Security review — verify no secrets in source, CSP meta tag present and correct, no inline scripts/styles, email obfuscated in source (Principle VI)
 - [x] T062 SEO checklist — verify title, meta description, canonical, OG tags, JSON-LD Person schema, sitemap.xml, robots.txt all present and correct (Principle VII)
-- [ ] T063 Cross-browser responsive check — verify at 320px, 768px, 1280px viewports, no horizontal scrolling, all content readable per SC-005
+- [x] T063 Cross-browser responsive check — verify at 320px, 768px, 1280px viewports, no horizontal scrolling, all content readable per SC-005
 - [x] T064 Code cleanup — DRY review of CSS (custom properties used consistently), naming review (no magic strings in JS), build.js function sizes ≤ 30 lines (Principles I, II, IX)
 
 ---
